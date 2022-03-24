@@ -1,0 +1,15 @@
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\bin\Debug\WPFkalendarZpisnoy.exe.config
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\bin\Debug\WPFkalendarZpisnoy.exe
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\bin\Debug\WPFkalendarZpisnoy.pdb
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\WPFkalendarZpisnoy.csproj.AssemblyReference.cache
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\MainWindow.g.cs
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\App.g.cs
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\WPFkalendarZpisnoy_MarkupCompile.cache
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\WPFkalendarZpisnoy_MarkupCompile.lref
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\MainWindow.baml
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\WPFkalendarZpisnoy.g.resources
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\WPFkalendarZpisnoy.Properties.Resources.resources
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\WPFkalendarZpisnoy.csproj.GenerateResource.cache
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\WPFkalendarZpisnoy.csproj.CoreCompileInputs.cache
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\WPFkalendarZpisnoy.exe
+C:\Users\user.COM302-3\source\repos\WPFkalendarZpisnoy\obj\Debug\WPFkalendarZpisnoy.pdb
