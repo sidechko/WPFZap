@@ -7,42 +7,119 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        <Style x:Key="elBut" TargetType="Button">
+        <Style x:Key="moveButton" TargetType="Button">
+            <Setter Property="Background" Value="#FFB6B6B6"/>
             <Setter Property="ItemsControl.Template">
                 <Setter.Value>
-                    <ControlTemplate>
-                        <Grid Margin="5">
-                            <Rectangle>
-                                <Rectangle.Fill>
-                                    <SolidColorBrush Color="#FFE4E4E4" Opacity="0.5"/>
-                                </Rectangle.Fill>
-                            </Rectangle>
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" Margin="2" >
+                            <Label Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{TemplateBinding FontSize}" Padding="0,0,0,5" FontWeight="Bold"/>
+                        </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="ItemsControl.Template">
-                        <Setter.Value>
-                            <ControlTemplate>
-                                <Grid Margin="5">
-                                    <Rectangle>
-                                        <Rectangle.Fill>
-                                            <SolidColorBrush Color="#FFB8B8B8" Opacity="0.5"/>
-                                        </Rectangle.Fill>
-                                    </Rectangle>
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Background" Value="#FFCDCDCD"/>
                 </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="Gainsboro"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="dayButton" TargetType="Button">
+            <Setter Property="Background" Value="#FFDEECEC"/>
+            <Setter Property="ItemsControl.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" Margin="2">
+                            <Label Content="{TemplateBinding Content}" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14" Padding="3,3,0,5"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="Tag" Value="T">
+                    <Setter Property="Background" Value="#FFE9DEEC"/>
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Tag" Value="T"/>
+                        <Condition Property="IsMouseOver" Value="False"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#FFCFB9DC"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Tag" Value="T"/>
+                        <Condition Property="IsPressed" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#FFF7D7F9"/>
+                </MultiTrigger>
+
+                <Trigger Property="Tag" Value="N">
+                    <Setter Property="Background" Value="#FFDEECDF"/>
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Tag" Value="N"/>
+                        <Condition Property="IsMouseOver" Value="False"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#FFBEDCB9"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Tag" Value="N"/>
+                        <Condition Property="IsPressed" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#FFDAF9D7"/>
+                </MultiTrigger>
+
+                <Trigger Property="Tag" Value="W">
+                    <Setter Property="Background" Value="#FFECDEDE"/>
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Tag" Value="W"/>
+                        <Condition Property="IsMouseOver" Value="False"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#FFDCB9B9"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Tag" Value="W"/>
+                        <Condition Property="IsPressed" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#FFF9D7D7"/>
+                </MultiTrigger>
+
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Tag" Value="O"/>
+                        <Condition Property="IsMouseOver" Value="False"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#FFB9DCDB"/>
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Tag" Value="O"/>
+                        <Condition Property="IsPressed" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="#FFD7F9F8"/>
+                </MultiTrigger>
             </Style.Triggers>
         </Style>
     </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="Список всех записей" Click="MenuItem_Click"/>
+        </Menu>
+        <Grid Grid.Row="1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
@@ -56,16 +133,18 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2.5*"/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2.5*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="yearAdd" Grid.Column="0" Style="{DynamicResource ResourceKey=elBut}" Content="-"/>
-                    <Button x:Name="yearRem" Grid.Column="2" Style="{DynamicResource ResourceKey=elBut}" Content="+"/>
-                    <Button x:Name="mountAdd" Grid.Column="3" Style="{DynamicResource ResourceKey=elBut}" Content="-"/>
-                    <Button x:Name="mountRem" Grid.Column="5" Style="{DynamicResource ResourceKey=elBut}" Content="+"/>
+                    <Button x:Name="yearAdd" Grid.Column="0" Style="{DynamicResource ResourceKey=moveButton}" Tag="Y" Content="-" Click="moveDate" FontSize="30"/>
+                    <Label x:Name="SelectedYearLabel" Grid.Column="1" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Button x:Name="yearRem" Grid.Column="2" Style="{DynamicResource ResourceKey=moveButton}" Tag="Y" Content="+" Click="moveDate" FontSize="30"/>
+                    <Button x:Name="mountAdd" Grid.Column="3" Style="{DynamicResource ResourceKey=moveButton}" Tag="M" Content="-" Click="moveDate" FontSize="30"/>
+                    <Label x:Name="SelectedMountLabel" Grid.Column="4" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Button x:Name="mountRem" Grid.Column="5" Style="{DynamicResource ResourceKey=moveButton}" Tag="M" Content="+" Click="moveDate" FontSize="30"/>
                 </Grid>
             </Grid>
             <Grid Grid.Row="1" Name="daysGrid">
@@ -87,5 +166,31 @@
                 </Grid.RowDefinitions>
             </Grid>
         </Grid>
+        <Grid Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="selectedDate" Content="Не указано" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="selectedDayNotes" Grid.Row="0" Margin="0,0,0,10" SelectionChanged="selectedDayNotes_SelectionChanged"/>
+                    <TextBox x:Name="noteName" Grid.Row="1"/>
+                    <TextBox x:Name="noteTextBody" Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10"/>
+                    <Button x:Name="addNote" Grid.Row="3" Content="Добавить запись" MaxHeight="120" Style="{DynamicResource ResourceKey=moveButton}" Click="addNote_Click"/>
+                    <Button x:Name="changeNote" Grid.Row="4" Content="Изменить запись" MaxHeight="120" Style="{DynamicResource ResourceKey=moveButton}" Click="changeNote_Click"/>
+                    <Button x:Name="removeNote" Grid.Row="5" Content="Удалить запись" MaxHeight="120" Style="{DynamicResource ResourceKey=moveButton}" Click="removeNote_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
     </Grid>
 </Window>

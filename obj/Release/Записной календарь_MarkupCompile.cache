@@ -1,14 +1,14 @@
-﻿WPFkalendarZpisnoy
+﻿Записной календарь
 
 
 winexe
 C#
 .cs
-C:\Users\User\Desktop\WPFZap\obj\Debug\
+C:\Users\User\Desktop\WPFZap\obj\Release\
 WPFkalendarZpisnoy
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\User\Desktop\WPFZap\App.xaml
 11151548125
 

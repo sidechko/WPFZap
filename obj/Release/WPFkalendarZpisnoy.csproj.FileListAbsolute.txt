@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\WPFZap\bin\Release\Записной календарь.exe.config
+C:\Users\User\Desktop\WPFZap\bin\Release\Записной календарь.exe
+C:\Users\User\Desktop\WPFZap\bin\Release\Записной календарь.pdb
+C:\Users\User\Desktop\WPFZap\obj\Release\WPFkalendarZpisnoy.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\WPFZap\obj\Release\MainWindow.g.cs
+C:\Users\User\Desktop\WPFZap\obj\Release\App.g.cs
+C:\Users\User\Desktop\WPFZap\obj\Release\Записной календарь_MarkupCompile.cache
+C:\Users\User\Desktop\WPFZap\obj\Release\Записной календарь_MarkupCompile.lref
+C:\Users\User\Desktop\WPFZap\obj\Release\MainWindow.baml
+C:\Users\User\Desktop\WPFZap\obj\Release\Записной календарь.g.resources
+C:\Users\User\Desktop\WPFZap\obj\Release\WPFkalendarZpisnoy.Properties.Resources.resources
+C:\Users\User\Desktop\WPFZap\obj\Release\WPFkalendarZpisnoy.csproj.GenerateResource.cache
+C:\Users\User\Desktop\WPFZap\obj\Release\WPFkalendarZpisnoy.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\WPFZap\obj\Release\Записной календарь.exe
+C:\Users\User\Desktop\WPFZap\obj\Release\Записной календарь.pdb
